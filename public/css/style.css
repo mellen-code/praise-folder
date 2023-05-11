@@ -1,0 +1,27 @@
+.pinPosition {
+    transform: rotate(30deg);
+}
+
+.likePosition {
+    margin-top: -30px;
+}
+
+.width15 {
+    width: 15%;
+}
+
+.noUnderline {
+    text-decoration: none;
+}
+
+.ml3rem {
+    margin-left: 3rem;
+}
+
+.mt4rem {
+    margin-top: 4.5rem;
+}
+
+.mbottom3 {
+    margin-bottom: 3rem;
+}

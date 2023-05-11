@@ -1,0 +1,58 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <div class="mt-5">
+
+        <!-- <form action="/stories/{{story._id}}" method="POST" class="col s12">
+
+          {{!-- This is the hidden input box to override POST method when want to use another method --}}
+              <input type="hidden" name="_method" value="PUT"> -->
+
+              <!-- enctype="multipart/form-data" -->
+
+        <form action="/praise/<%= praise._id %>?_method=PUT" method="POST">
+
+          <input type="hidden" name="_method" value="PUT">
+
+          <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" name="title" value=<%= praise.title %>
+          </div>
+
+          <div class="mb-3">
+            <label for="caption" class="form-label">Caption</label>
+            <textarea class="form-control" id="caption" name="caption"><%= praise.caption %></textarea>
+          </div>
+
+          <label for="status">Status</label>
+          <div class="input-field">
+            <select name="status" id="status">
+                <option value="<%= praise.status %>" selected><%= praise.status %></option>
+                <option value="<%= otherStatus %>"><%= otherStatus %></option>
+            </select> 
+          </div> 
+
+        <img class="img-fluid" src="<%= praise.image%>" /> 
+
+          <button class="btn" type="submit">Save</button>
+      </form>
+
+          <form
+            action="/praise/deletePraise/<%= praise.id %>?_method=DELETE"
+            method="POST"
+            class="col-3">
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          </form>       
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="col-6 mt-5">
+      <a class="btn btn-primary" href="/folder">Return to Folder</a>
+      <a class="btn btn-primary" href="/feed">Return to Public Feed</a>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

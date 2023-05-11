@@ -1,0 +1,71 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row">
+    
+    <div class="col-8">
+      <div class="d-flex row-6 mt-5">
+        <h2 class="text-capitalize">Hello<strong> <%= user.userName %></strong></h2> 
+      </div>
+
+        <div class="row-6 ">
+          <ul class="d-flex flex-wrap justify-content-start list-unstyled ">
+          <% for(var i=0; i<praises.length; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/praise/<%= praises[i]._id%>" class="noUnderline">
+                <h5><%= praises[i].title.substring(0, 20) %>...</h5>
+                <img class="img-fluid" src="<%= praises[i].image%>">
+              </a>
+            </li>
+          <% } %>
+          </ul>
+        </div>
+    </div>  
+
+    <!-- <div class="col-6">
+      <div class="d-flex justify-content-end row-6 mt-5"> 
+        <a href="/logout" class="col-3 btn btn-primary width15">Logout</a>  
+      </div> -->
+        
+
+      <div class="col-3 mt-5 ml3rem">
+        <div class="d-flex row-6 mt-5">
+          <h2 class="text-capitalize d-none">Hello<strong> <%= user.userName %></strong></h2> 
+        </div>
+
+        <h2 class="mt4rem">Add a praise</h2>
+        <form action="/praise/createPraise" enctype="multipart/form-data" method="POST">
+          <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" name="title">
+          </div>
+          <div class="mb-3">
+            <label for="caption" class="form-label">Caption</label>
+            <textarea class="form-control" id="caption" name="caption"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div>
+          
+          <div class="mb-3">
+            <label for="status">Choose One:</label>
+            <div class="input-field">
+                <select name="status" id="status">
+                    <option value="private" selected>private</option>
+                    <option value="public">add to public feed</option>
+                </select> 
+            </div>
+        </div>
+      </div>
+      </form>
+
+      
+          </div>
+          
+    </div>
+
+  </div>
+  </div>
+</div>
+</div>
+<%- include('partials/footer') -%>

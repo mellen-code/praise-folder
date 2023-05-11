@@ -1,0 +1,90 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <h3><%= praise.user %></h3>
+      <h4><%= praise.title %></h4>
+
+      <%if(praise.user == user.id){ %>
+        <div class="d-flex justify-content-end">
+          <form
+            class="pinPosition position-absolute"
+            action="/praise/pinPraise/<%= praise.id %>?_method=PUT"
+            method="POST">
+            <button class="btn btn-primary fa fa-thumbtack rounded-circle btn-lg" type="submit"></button>
+          </form>
+
+        </div>  
+      <%}%>
+
+      <img class="img-fluid" src="<%= praise.image%>" />
+
+      <div class="row justify-content-between">
+        
+        <%if(praise.user == user.id){ %>
+          <div class="d-flex justify-content-end">
+            <form action="/praise/editPraise/<%= praise.id %>?_method=GET">
+              <button class="btn btn-primary fa fa-edit" type="submit"></button>
+            </form>
+
+            <form
+            action="/praise/deletePraise/<%= praise.id %>?_method=DELETE"
+            method="POST">
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>         
+          </div>
+        <%}%>
+      
+        <div class="justify-content-start">
+          <form
+          class="col-1"
+          action="/praise/likePraise/<%= praise.id %>?_method=PUT"
+          method="POST">
+          <button class="btn btn-primary fa fa-heart likePosition" type="submit"></button>
+          </form>
+          <h3><%= praise.likes %> likes</h3>
+
+          <p><%= praise.caption %></p>
+        </div>
+      </div>
+  </div>
+
+    <div class="mt-5">
+      <form action="/comment/createComment/<%=praise._id%>" method="POST">
+        <div class="mb-3">
+            <label for="comment" class="form-label">Add a Comment</label>
+            <input type="text" class="form-control" id="comment" name="comment">
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
+    </div>
+
+    <ul>
+      <% for(var i=0; i<comments.length; i++) {%>
+        <li class="col-6 justify-content-between mt-5">
+          <%= comments[i].createdByUsername%> says: "<%= comments[i].comment%>"
+
+          <%if (comments[i].createdById == user.id){ %>
+          <form
+            action="/comment/deleteComment/<%= praise.id %>/<%= comments[i]._id %>?_method=DELETE"
+            method="POST"
+           
+          >
+            <button class="btn btn-outline-danger" type="submit">Delete</button>
+          </form>
+          <%}%>
+        </li>
+
+        
+      <% } %>
+    </ul>
+    
+
+    <div class="col-6 mt-5">
+      <a class="btn btn-primary" href="/folder">Return to Folder</a>
+      <a class="btn btn-primary" href="/feed">Return to Public Feed</a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>
