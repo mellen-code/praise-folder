@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-    <main class="container">
+    <main class="container fullScreen">
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
                 <% if (locals.messages.errors) { %>
@@ -30,7 +30,10 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                      <div class="d-flex justify-content-between row-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="/" class="col-3 btn btn-primary width15">Back</a>
+                      </div>
                   </form>
             </section>
         </div>

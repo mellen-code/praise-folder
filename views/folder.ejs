@@ -4,14 +4,14 @@
     
     <div class="col-8">
       <div class="d-flex row-6 mt-5">
-        <h2 class="text-capitalize">Hello<strong> <%= user.userName %></strong></h2> 
+        <h2 class="text-capitalize greetingColor">Hello<strong> <%= user.userName %></strong></h2> 
       </div>
 
         <div class="row-6 ">
           <ul class="d-flex flex-wrap justify-content-start list-unstyled ">
           <% for(var i=0; i<praises.length; i++) {%>
             <li class="col-6 justify-content-between mt-5">
-              <a href="/praise/<%= praises[i]._id%>" class="noUnderline">
+              <a href="/praise/<%= praises[i]._id%>" class="noUnderline praiseTitleColor">
                 <h5><%= praises[i].title.substring(0, 20) %>...</h5>
                 <img class="img-fluid" src="<%= praises[i].image%>">
               </a>
@@ -56,11 +56,12 @@
                 </select> 
             </div>
         </div>
+
+        <button type="submit" class="btn btnColor">Post</button>
+
       </div>
       </form>
-
-      
-          </div>
+      </div>
           
     </div>
 

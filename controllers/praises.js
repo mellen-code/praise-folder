@@ -17,7 +17,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const praises = await Praise.find({ status: "public"})
-        .sort({ createdAt: "asc" })
+        .sort({ createdAt: "desc" })
         .lean();
       res.render("feed.ejs", { praises: praises });
     } catch (err) {

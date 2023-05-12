@@ -36,15 +36,14 @@
         <%}%>
       
         <div class="justify-content-start">
+          <p><%= praise.caption %></p>
           <form
           class="col-1"
           action="/praise/likePraise/<%= praise.id %>?_method=PUT"
           method="POST">
           <button class="btn btn-primary fa fa-heart likePosition" type="submit"></button>
           </form>
-          <h3><%= praise.likes %> likes</h3>
-
-          <p><%= praise.caption %></p>
+          <h3><%= praise.likes %> likes</h3>         
         </div>
       </div>
   </div>
@@ -55,11 +54,11 @@
             <label for="comment" class="form-label">Add a Comment</label>
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
-        <button type="submit" class="btn btn-primary">Post</button>
+        <button type="submit" class="btn btnColor">Post</button>
       </form>
     </div>
 
-    <ul>
+    <ul class="list-unstyled">
       <% for(var i=0; i<comments.length; i++) {%>
         <li class="col-6 justify-content-between mt-5">
           <%= comments[i].createdByUsername%> says: "<%= comments[i].comment%>"
@@ -80,9 +79,9 @@
     </ul>
     
 
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/folder">Return to Folder</a>
-      <a class="btn btn-primary" href="/feed">Return to Public Feed</a>
+    <!-- <div class="col-6 mt-5">
+      <a class=""btn btnColor" href="/folder">Return to Folder</a>
+      <a class=""btn btnColor" href="/feed">Return to Public Feed</a> -->
     </div>
   </div>
 </div>

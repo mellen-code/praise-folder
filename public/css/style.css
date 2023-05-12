@@ -1,8 +1,25 @@
+/* https://divine-agency.com/
+colors:
+light light yellow: #FFDF96
+light yellow: #FFDB8A */
+/* medium yellow: #EFB643 */
+/* teal: ##03A79D */
+/* orange: #F0794A */
+/* lt grey: #A7A9AC */
+/* dk charcoal: #303030 */
+/* sky blue: #5EC4CF */
+
+
+.backgroundColor {
+    background: radial-gradient(#faeac6, #FFDB8A, #EFB643);
+}
+
 .pinPosition {
     transform: rotate(30deg);
 }
 
-.likePosition {
+.likePosition
+ {
     margin-top: -30px;
 }
 
@@ -24,4 +41,34 @@
 
 .mbottom3 {
     margin-bottom: 3rem;
+}
+
+.footerText {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.footerTextColor:hover, .titleColor:hover, .greetingColor {
+    color: #ec6e3c;
+}
+
+.praiseTitleColor {
+    color: #303030;
+}
+
+.titleColor, .footerTextColor, .praiseTitleColor:hover {
+    color: #039187;
+}
+
+.btnColor {
+    background-color: #20a89e;
+}
+
+.btnColor:hover {
+    color: #ffffff;
+}
+
+.fullScreen {
+    height: 100vh;
+    width: 100vw;
 }
