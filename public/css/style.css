@@ -3,8 +3,8 @@ colors:
 light light yellow: #FFDF96
 light yellow: #FFDB8A */
 /* medium yellow: #EFB643 */
-/* teal: ##03A79D */
-/* orange: #F0794A */
+/* teal: #03A79D */
+/* orange: #EE784B */
 /* lt grey: #A7A9AC */
 /* dk charcoal: #303030 */
 /* sky blue: #5EC4CF */
@@ -15,16 +15,15 @@ light yellow: #FFDB8A */
 }
 
 .pinPosition {
-    transform: rotate(30deg);
-}
-
-.likePosition
- {
-    margin-top: -30px;
+    transform: rotate(-30deg);
 }
 
 .width15 {
     width: 15%;
+}
+
+.width20 {
+    width: 20%;
 }
 
 .noUnderline {
@@ -35,8 +34,16 @@ light yellow: #FFDB8A */
     margin-left: 3rem;
 }
 
+.ml1rem {
+    margin-left: 1rem;
+}
+
 .mt4rem {
     margin-top: 4.5rem;
+}
+
+.zindex {
+    z-index: 100;
 }
 
 .mbottom3 {
@@ -48,15 +55,15 @@ light yellow: #FFDB8A */
     padding-right: 1.5rem;
 }
 
-.footerTextColor:hover, .titleColor:hover, .greetingColor {
-    color: #ec6e3c;
+.footerTextColor:hover, .titleColor {
+    color: #EE784B;
 }
 
 .praiseTitleColor {
     color: #303030;
 }
 
-.titleColor, .footerTextColor, .praiseTitleColor:hover {
+.greetingColor, .footerTextColor, .praiseTitleColor:hover, .titleColor:hover {
     color: #039187;
 }
 
@@ -64,8 +71,24 @@ light yellow: #FFDB8A */
     background-color: #20a89e;
 }
 
+.btnColorRed {
+    background-color: #FF4571;
+    color: #ffffff;
+}
+
 .btnColor:hover {
     color: #ffffff;
+}
+
+.picPosition1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.picPosition2 {
+    position: absolute;
+    bottom: 0;
 }
 
 .fullScreen {

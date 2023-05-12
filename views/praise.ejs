@@ -6,55 +6,54 @@
       <h4><%= praise.title %></h4>
 
       <%if(praise.user == user.id){ %>
-        <div class="d-flex justify-content-end">
+      
+        <div class="d-flex">
           <form
-            class="pinPosition position-absolute"
+            class="pinPosition position-absolute zindex"
             action="/praise/pinPraise/<%= praise.id %>?_method=PUT"
             method="POST">
-            <button class="btn btn-primary fa fa-thumbtack rounded-circle btn-lg" type="submit"></button>
+            <button class="btn btnColor fa fa-thumbtack rounded-circle btn-lg" type="submit"></button>
           </form>
 
         </div>  
       <%}%>
 
-      <img class="img-fluid" src="<%= praise.image%>" />
-
-      <div class="row justify-content-between">
-        
-        <%if(praise.user == user.id){ %>
-          <div class="d-flex justify-content-end">
-            <form action="/praise/editPraise/<%= praise.id %>?_method=GET">
-              <button class="btn btn-primary fa fa-edit" type="submit"></button>
+      <div class="d-flex position-relative">
+        <img class="img-fluid" src="<%= praise.image%>" />
+        <%if(praise.user == user.id){ %>         
+            <form action="/praise/editPraise/<%= praise.id %>?_method=GET" method="POST" >
+              <button class="btn btnColor fa fa-edit picPosition1" type="submit"></button>
             </form>
 
             <form
             action="/praise/deletePraise/<%= praise.id %>?_method=DELETE"
-            method="POST">
-            <button class="btn btn-primary fa fa-trash" type="submit"></button>
-            </form>         
-          </div>
+            method="POST" >
+            <button class="btn btnColor picPosition2 fa fa-trash" type="submit"></button>
+            </form>                
         <%}%>
-      
+    </div>
+
+      <div class="row justify-content-between">
         <div class="justify-content-start">
           <p><%= praise.caption %></p>
-          <form
-          class="col-1"
-          action="/praise/likePraise/<%= praise.id %>?_method=PUT"
-          method="POST">
-          <button class="btn btn-primary fa fa-heart likePosition" type="submit"></button>
-          </form>
-          <h3><%= praise.likes %> likes</h3>         
+          <div class="d-flex mt-4">
+            <form action="/praise/likePraise/<%= praise.id %>?_method=PUT"
+            method="POST">
+            <button class="btn btnColorRed fa fa-heart" type="submit"></button>
+            </form>
+            <h3 class="ml1rem"><%= praise.likes %> likes</h3>  
+        </div>       
         </div>
       </div>
-  </div>
+  
 
-    <div class="mt-5">
+    <div class="mt-3">
       <form action="/comment/createComment/<%=praise._id%>" method="POST">
-        <div class="mb-3">
+        <div class="col-6">
             <label for="comment" class="form-label">Add a Comment</label>
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
-        <button type="submit" class="btn btnColor">Post</button>
+        <button type="submit" class="btn btnColor mt-3">Post</button>
       </form>
     </div>
 
@@ -66,9 +65,7 @@
           <%if (comments[i].createdById == user.id){ %>
           <form
             action="/comment/deleteComment/<%= praise.id %>/<%= comments[i]._id %>?_method=DELETE"
-            method="POST"
-           
-          >
+            method="POST">
             <button class="btn btn-outline-danger" type="submit">Delete</button>
           </form>
           <%}%>
@@ -78,11 +75,7 @@
       <% } %>
     </ul>
     
-
-    <!-- <div class="col-6 mt-5">
-      <a class=""btn btnColor" href="/folder">Return to Folder</a>
-      <a class=""btn btnColor" href="/feed">Return to Public Feed</a> -->
-    </div>
+  </div>
   </div>
 </div>
 
