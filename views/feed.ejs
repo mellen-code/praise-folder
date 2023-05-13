@@ -1,8 +1,8 @@
 <%- include('partials/header') -%>
   <div class="container">
-    <div class="row justify-content-center mt-5">
+    <div class="row gx-5 justify-content-center mt-5">
       <h2 class="greetingColor">Public Feed</h2>
-      <ul class="row list-unstyled">
+      <ul class="row p-0 list-unstyled">
         <% for(var i=0; i<praises.length; i++) {%>
           <li class="col-6 justify-content-en mt-5">
             <a href="/praise/<%= praises[i]._id%>" class="noUnderline praiseTitleColor">

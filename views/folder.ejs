@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row">
+  <div class="row phoneCenter">
     
     <div class="col-8">
       <div class="d-flex row-6 mt-5">
@@ -27,12 +27,12 @@
       </div> -->
         
 
-      <div class="col-3 mt-5 ml3rem">
+      <div class="col-3 mt-5 ml3rem phoneWiden">
         <div class="d-flex row-6 mt-5">
           <h2 class="text-capitalize d-none">Hello<strong> <%= user.userName %></strong></h2> 
         </div>
 
-        <h2 class="mt4rem">Add a praise</h2>
+        <h2 class="mt4rem marginTop0">Add a praise</h2>
         <form action="/praise/createPraise" enctype="multipart/form-data" method="POST">
           <div class="mb-3">
               <label for="title" class="form-label">Title</label>

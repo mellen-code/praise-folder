@@ -1,15 +1,8 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row justify-content-center mt-5">
+  <div class="row justify-content-center mt-3">
     <div class="col-6">
-      <div class="mt-5">
-
-        <!-- <form action="/stories/{{story._id}}" method="POST" class="col s12">
-
-          {{!-- This is the hidden input box to override POST method when want to use another method --}}
-              <input type="hidden" name="_method" value="PUT"> -->
-
-              <!-- enctype="multipart/form-data" -->
+      <div class="mt-1">
 
         <form action="/praise/<%= praise._id %>?_method=PUT" method="POST">
 
@@ -20,38 +13,28 @@
               <input type="text" class="form-control" id="title" name="title" value=<%= praise.title %>
           </div>
 
-          <div class="mb-3">
+          <img class="img-fluid mt-3" src="<%= praise.image%>" /> 
+
+          <div class="mb-2 mt-3">
             <label for="caption" class="form-label">Caption</label>
             <textarea class="form-control" id="caption" name="caption"><%= praise.caption %></textarea>
           </div>
 
           <label for="status">Status</label>
-          <div class="input-field">
+          <div class="input-field mb-2">
             <select name="status" id="status">
                 <option value="<%= praise.status %>" selected><%= praise.status %></option>
                 <option value="<%= otherStatus %>"><%= otherStatus %></option>
             </select> 
           </div> 
 
-        <img class="img-fluid" src="<%= praise.image%>" /> 
-
-          <button class="btn" type="submit">Save</button>
-      </form>
-
-          <form
-            action="/praise/deletePraise/<%= praise.id %>?_method=DELETE"
-            method="POST"
-            class="col-3">
-            <button class="btn btn-primary fa fa-trash" type="submit"></button>
-          </form>       
+          <div class="d-flex mt-4 justify-content-between">
+            <button class="btn btnColor" type="submit">Save</button>
+            <a href="/folder" class="btn btnColor">Cancel</a> 
+          </form>
+          </div>      
         </div>
       </div>
-    </div>
-    
-
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/folder">Return to Folder</a>
-      <a class="btn btn-primary" href="/feed">Return to Public Feed</a>
     </div>
 </div>
 
