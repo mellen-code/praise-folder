@@ -8,11 +8,30 @@
       </div>
 
         <div class="row-6 ">
+          <%if(praises.length === 0){ %>
+            <div class="mt-5">
+              <h3>Upload a praise to display here!</h3>
+            </div>
+          <%}%>
           <ul class="d-flex flex-wrap justify-content-start list-unstyled ">
           <% for(var i=0; i<praises.length; i++) {%>
             <li class="col-6 justify-content-between mt-5">
               <a href="/praise/<%= praises[i]._id%>" class="noUnderline praiseTitleColor">
                 <h5><%= praises[i].title.substring(0, 20) %>...</h5>
+
+                <%if(praises[i].pinned == true){ %>
+      
+                  <div class="d-flex">
+                    <form
+                      class="pinPosition position-absolute zindex"
+                      action="/praise/pinPraise/<%= praises[i]._id %>?_method=PUT"
+                      method="POST">
+                      <button class="btn btnColor fa fa-thumbtack rounded-circle btn-lg" type="submit"></button>
+                    </form>
+          
+                  </div>  
+                  <%}%>
+
                 <img class="img-fluid" src="<%= praises[i].image%>">
               </a>
             </li>
@@ -20,12 +39,6 @@
           </ul>
         </div>
     </div>  
-
-    <!-- <div class="col-6">
-      <div class="d-flex justify-content-end row-6 mt-5"> 
-        <a href="/logout" class="col-3 btn btn-primary width15">Logout</a>  
-      </div> -->
-        
 
       <div class="col-3 mt-5 ml3rem phoneWiden">
         <div class="d-flex row-6 mt-5">

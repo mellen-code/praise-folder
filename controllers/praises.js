@@ -14,6 +14,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   getFeed: async (req, res) => {
     try {
       const praises = await Praise.find({ status: "public"})
@@ -24,20 +25,20 @@ module.exports = {
       console.log(err);
     }
   },
+
   getPraise: async (req, res) => {
     try {
       const praise = await Praise.findById(req.params.id);
       const comments = await Comment.find({ praise: req.params.id}).sort({ createdAt: "asc" }).lean();
-      const praiseUsername = await Praise.findOne({ _id: req.params.id })
-        .populate('user')
-        .exec(function() {console.log('got this!')})
+      const userWhoPostedPraise = await praise.user;
+      const username = await User.findOne({ _id: userWhoPostedPraise}).lean();
 
-      console.log(praiseUsername)
-      res.render("praise.ejs", { praise: praise, user: req.user, comments: comments });
+      res.render("praise.ejs", { praise: praise, user: req.user, comments: comments, username: username });
     } catch (err) {
       console.log(err);
     }
   },
+
   createPraise: async (req, res) => {
     try {
       // Upload image to cloudinary
@@ -58,6 +59,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   getEditPraise: async (req, res) => {
     try {
       const praise = await Praise.findOne({
@@ -103,7 +105,6 @@ module.exports = {
             res.redirect('/folder')
             }
     } catch (error) {
-        console.error(err)
         return res.render('error/500')
     }
   },
@@ -138,7 +139,6 @@ module.exports = {
 
   deletePraise: async (req, res) => {
     try {
-      // Find post by id
       let praise = await Praise.findById({ _id: req.params.id });
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(praise.cloudinaryId);
@@ -147,6 +147,7 @@ module.exports = {
       console.log("Deleted Praise");
       res.redirect("/folder");
     } catch (err) {
+      console.log(err)
       res.redirect("/folder");
     }
   },

@@ -10,7 +10,7 @@
 
           <div class="mb-3">
               <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control" id="title" name="title" value=<%= praise.title %>
+              <input type="text" class="form-control" id="title" name="title" value="<%= praise.title %>"
           </div>
 
           <img class="img-fluid mt-3" src="<%= praise.image%>" /> 
@@ -28,11 +28,18 @@
             </select> 
           </div> 
 
-          <div class="d-flex mt-4 justify-content-between">
+          <div class="d-flex mt-4 justify-content-between phoneDisplay">
             <button class="btn btnColor" type="submit">Save</button>
-            <a href="/folder" class="btn btnColor">Cancel</a> 
-          </form>
-          </div>      
+
+            <a href="/folder" class="btn btnColor phoneDisplayMT2">Cancel</a> 
+          </div>   
+        </form>  
+
+        <form
+          action="/praise/deletePraise/<%= praise._id %>?_method=DELETE"
+          method="POST" >
+          <button class="btn btnColorHoverRed fa fa-trash mt-5" type="submit">  <span class="lightFont">Delete Praise</span></button>
+          </form>   
         </div>
       </div>
     </div>

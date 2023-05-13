@@ -8,6 +8,7 @@ light yellow: #FFDB8A */
 /* lt grey: #A7A9AC */
 /* dk charcoal: #303030 */
 /* sky blue: #5EC4CF */
+/* red: #EB5850 */
 
 
 .backgroundColor {
@@ -72,7 +73,7 @@ light yellow: #FFDB8A */
 }
 
 .btnColorRed {
-    background-color: #FF4571;
+    background-color: #e32117;
     color: #ffffff;
 }
 
@@ -81,7 +82,7 @@ light yellow: #FFDB8A */
 }
 
 .btnColorHoverRed:hover {
-    color: #FF4571
+    color: #e32117;
 }
 
 .picPosition1 {
@@ -100,9 +101,20 @@ light yellow: #FFDB8A */
     width: 100vw;
 }
 
+.lightFont {
+    font-family: Segoe UI, Arial, sans-serif;
+    font-weight: 400;
+}
+
 @media screen and (min-width: 1200px) {
     .marginAdjust {
         margin-right: 10rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1001px) {
+    .btnColor, .btnColorHoverRed {
+        width: 30%;
     }
 }
 
@@ -119,5 +131,27 @@ light yellow: #FFDB8A */
 
     .marginTop0 {
         margin-top: 0;
+    }
+
+    .btnColor, .btnColorHoverRed {
+        width: 70%;
+    }
+
+    .phoneDisplay {
+        display: block !important;
+    }
+
+    .phoneDisplayMT2 {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footerText {
+        flex-wrap: wrap;
+    }
+
+    .footerTextColor {
+        margin-right: 40%;
     }
 }
