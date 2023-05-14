@@ -8,6 +8,8 @@ Users can login to their profile and find their
 folder of praises/acknowledgments. They can add praises through an input, 
 and pin, edit or delete any in their profile, as well as comment on any praises in the Public Feed.
 
+Full-stack web app using Node, Express, MongoDB, Passport, Bootstrap, and EJS.
+
 
 ## Tech used: ![NODE BADGE](https://img.shields.io/static/v1?label=%7C&message=NODE&color=cbb148&style=plastic&logo=node)![MONGODB BADGE](https://img.shields.io/static/v1?label=|&message=MONGO-DB&color=cdd148&style=plastic&logo=mongodb)![EXPRESS BADGE](https://img.shields.io/static/v1?label=|&message=EXPRESS&color=bbb111&style=plastic&logo=express)![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript)![EJS BADGE](https://img.shields.io/static/v1?label=|&message=EJS&color=9bb24e&style=plastic)![BOOTSTRAP BADGE](https://img.shields.io/static/v1?label=|&message=BOOTSTRAP&color=316c5e&style=plastic&logo=bootstrap)![CSS BADGE](https://img.shields.io/static/v1?label=|&message=CSS3&color=285f65&style=plastic&logo=css3)
 
