@@ -106,6 +106,10 @@ light yellow: #FFDB8A */
     font-weight: 400;
 }
 
+#pinPhoneWidth {
+    width: 100% !important;
+}
+
 @media screen and (min-width: 1200px) {
     .marginAdjust {
         margin-right: 10rem;
@@ -115,6 +119,13 @@ light yellow: #FFDB8A */
 @media screen and (min-width: 768px) and (max-width: 1001px) {
     .btnColor, .btnColorHoverRed {
         width: 30%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .feedPhonePadding {
+        padding-right: 2.5rem !important;
+        padding-left: 2.5rem !important;
     }
 }
 
@@ -135,6 +146,10 @@ light yellow: #FFDB8A */
 
     .btnColor, .btnColorHoverRed {
         width: 70%;
+    }
+
+    #indexButton {
+        width: 25%;
     }
 
     .phoneDisplay {
