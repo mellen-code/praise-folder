@@ -12,6 +12,7 @@ module.exports = {
       res.render("folder.ejs", { praises: praises, user: req.user });
     } catch (err) {
       console.log(err);
+      return res.render('error/501');
     }
   },
 
@@ -23,6 +24,7 @@ module.exports = {
       res.render("feed.ejs", { praises: praises });
     } catch (err) {
       console.log(err);
+      return res.render('error/500');
     }
   },
 
@@ -36,6 +38,7 @@ module.exports = {
       res.render("praise.ejs", { praise: praise, user: req.user, comments: comments, username: username });
     } catch (err) {
       console.log(err);
+      return res.render('error/500');
     }
   },
 
@@ -57,6 +60,7 @@ module.exports = {
       res.redirect("/folder");
     } catch (err) {
       console.log(err);
+      return res.render('error/500');
     }
   },
 
@@ -77,10 +81,10 @@ module.exports = {
         praise,
         otherStatus
     });
-    console.log(praise)
 
     } catch (err) {
       console.log(err);
+      return res.render('error/500');
     }
   },
 
@@ -105,7 +109,7 @@ module.exports = {
             res.redirect('/folder')
             }
     } catch (error) {
-        return res.render('error/500')
+        return res.render('error/500');
     }
   },
 
@@ -120,6 +124,7 @@ module.exports = {
       res.redirect(`/praise/${req.params.id}`);
     } catch (err) {
       console.log(err);
+      return res.render('error/500');
     }
   },
 
@@ -134,6 +139,7 @@ module.exports = {
       res.redirect('/folder');
     } catch (err) {
       console.log(err);
+      return res.render('error/500');
     }
   },
 

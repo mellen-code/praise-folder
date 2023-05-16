@@ -15,6 +15,7 @@ module.exports = {
       res.redirect("/praise/" + req.params.id);
     } catch (err) {
       console.log(err);
+      return res.render('error/500');
     }
   },
   deleteComment: async (req, res) => {
@@ -24,6 +25,7 @@ module.exports = {
       res.redirect("/praise/" + req.params.postid);
     } catch (err) {
       console.log(err);
+      res.redirect("/feed");
     }
   },
 };
